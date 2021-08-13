@@ -1,21 +1,29 @@
-import Button from './Botton'
-const Header = (props) =>{ 
-return (
-    <header>
-    <h1> Encabezado{props.title} </h1>
-    <h1 style={{color:'red', backgroundColor:'black'}}>
-     Encabezado </h1>
-     <h1 style={headingStyle}>Encabezado </h1>
-    </header>
-     )
-    }
-    Header.defaultProps={
-        title: 'Titulo por defecto'
-    }
-    
-    const headingStyle={
-    color:'red',
-    backgraundColor: 'black'
-    }
+import Button from './Button'
 
-    export default Header;
+const Header = (props) =>{
+  const onClick = () =>{
+    console.log('Click');
+  }
+
+
+return(
+  <header className='header'>
+  <h1>{props.title}</h1>
+
+  <Button text={props.showAdd ? 'x' : '+'} onClick={props.onAdd} />
+
+  </header>
+)
+}
+
+Header.defaultProps={
+  title:'Título por defecto'
+}
+
+const headingStyle={
+color:'red',
+backgroundColor:'black'
+}
+
+
+export default Header
